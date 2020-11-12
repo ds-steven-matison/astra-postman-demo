@@ -563,6 +563,763 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get Keyspaces",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Table",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ifNotExists\": false,\n    \"columnDefinitions\": [\n        {\n            \"static\": false,\n            \"name\": \"id\",\n            \"typeDefinition\": \"text\"\n        },\n        {\n            \"static\": false,\n            \"name\": \"value\",\n            \"typeDefinition\": \"text\"\n        }\n    ],\n    \"primaryKey\": {\"partitionKey\": [\"id\"]},\n    \"tableOptions\": {\"defaultTimeToLive\": 0},\n    \"name\": \"demo_table\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tables",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Table",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Table",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Columns",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table/columns",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table",
+								"columns"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Column",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table/columns/value",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table",
+								"columns",
+								"value"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Column",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table/columns/value",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table",
+								"columns",
+								"value"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Column",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"value\",\n    \"typeDefinition\": \"text\",\n    \"static\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table/columns/",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table",
+								"columns",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Column",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newName\": \"id2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table/columns/id",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table",
+								"columns",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rows",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table/rows",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table",
+								"rows"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Row",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table/rows/1",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table",
+								"rows",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Rows",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"columns\": [\n        {\n            \"name\": \"id\",\n            \"value\": \"1\"\n        },\n        {\n            \"name\": \"value\",\n            \"value\": \"some text\"\n        }\n    ]}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table/rows",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table",
+								"rows"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rows",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"changeset\": [{\n            \"column\": \"value\",\n            \"value\": \"some updated text\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table/rows/1",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table",
+								"rows",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rows",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table/rows/1",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table",
+								"rows",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Queries",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Cassandra-Token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"columnNames\": [\"id\",\"value\"],\n    \"filters\": [\n        {\n            \"value\": [\"1\"],\n            \"columnName\": \"id\",\n            \"operator\": \"eq\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{db}}-{{region}}.apps.astra.datastax.com/api/rest/v1/keyspaces/demo_keyspace/tables/demo_table/rows/query",
+							"protocol": "https",
+							"host": [
+								"{{db}}-{{region}}",
+								"apps",
+								"astra",
+								"datastax",
+								"com"
+							],
+							"path": [
+								"api",
+								"rest",
+								"v1",
+								"keyspaces",
+								"demo_keyspace",
+								"tables",
+								"demo_table",
+								"rows",
+								"query"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}

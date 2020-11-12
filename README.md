@@ -17,8 +17,23 @@ This repo includes a collection with subfolders for DevOps and Data APIs along w
 - Resize Database
 
 # Astra Data API
-- Get aAuth Token
-- coming next
+- Get an Auth Token
+- Get Keyspaces
+- Create Table
+- Get Tables
+- Get Table
+- Delete Table
+- Add Rows
+- Submit Queries
+- Retrieve Rows
+- Update Rows
+- Delete Rows
+- Retrieve Columns
+- Add Column
+- Retrieve Column
+- Update Column
+- Delete Column
+
 
 # Get Postman
 - https://www.postman.com/downloads/
