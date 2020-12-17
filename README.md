@@ -2,6 +2,8 @@
 A sample repository demonstrating how to use Astra DevOps & Data APIs in Postman.
 This repo includes a collection with subfolders for DevOps and Data APIs along with an associated Environment.
 
+Check out my [Astra + Postman](https://ds-steven-matison.github.io/astra/postman/) blog.
+
 # Astra Devops API
 - Get Auth Token
 - Add Database
